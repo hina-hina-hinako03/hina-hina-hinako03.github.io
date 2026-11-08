@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>お得まとめカード</title>
+<style>
+  :root {
+    --paper: #fbf8f1;
+    --green: #2f5a33;
+    --green-soft: #8fb391;
+    --terra: #d9643e;
+    --terra-soft: #f6e3d8;
+    --ink: #3b3a36;
+    --muted: #7c7a72;
+    --line: #d8d2c3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 1080px; height: 1350px; background: var(--paper); font-family: "Noto Sans CJK JP", sans-serif; color: var(--ink); }
+  .card { position: relative; width: 1080px; height: 1350px; padding: 84px 88px 70px; }
+  .stripe { position: absolute; left: 0; right: 0; height: 18px;
+    background: repeating-linear-gradient(90deg, var(--terra) 0 46px, transparent 46px 66px, var(--green-soft) 66px 112px, transparent 112px 132px); }
+  .stripe.top { top: 26px; } .stripe.bottom { bottom: 26px; }
+
+  .kicker { display: inline-block; font-size: 30px; font-weight: 700; color: #fff; background: var(--terra); padding: 8px 22px 10px; letter-spacing: .08em; }
+  .kicker-note { font-size: 28px; color: var(--muted); margin-left: 16px; letter-spacing: .04em; }
+
+  h1 { margin-top: 26px; font-size: 60px; line-height: 1.35; color: var(--green); font-weight: 900; letter-spacing: .03em; }
+  .hero { display: flex; align-items: flex-end; gap: 22px; margin-top: 10px; }
+  .hero .max { font-size: 52px; font-weight: 900; color: var(--terra); writing-mode: vertical-rl; letter-spacing: .1em; line-height: 1; padding-bottom: 18px; }
+  .hero .num { font-size: 200px; font-weight: 900; color: var(--terra); line-height: .9; letter-spacing: -.02em; }
+  .hero .num small { font-size: 104px; }
+  .hero .unit { font-size: 50px; font-weight: 900; color: var(--green); line-height: 1.3; padding-bottom: 22px; }
+  .underline { width: 520px; height: 22px; margin-top: 4px; }
+
+  .rows { margin-top: 30px; display: grid; gap: 22px; }
+  .row { display: grid; grid-template-columns: 210px 1fr; align-items: start; gap: 24px; }
+  .label { font-size: 30px; font-weight: 700; color: var(--green); border-left: 8px solid var(--terra); padding: 4px 0 4px 16px; line-height: 1.3; }
+  .val { font-size: 32px; line-height: 1.5; font-weight: 500; }
+  .val b { color: var(--terra); font-weight: 900; }
+  .chips { display: flex; flex-wrap: wrap; gap: 12px; }
+  .chip { font-size: 30px; font-weight: 700; color: var(--green); background: #fff; border: 2px solid var(--green-soft); border-radius: 999px; padding: 6px 22px 8px; }
+
+  .memo { margin-top: 32px; padding-top: 24px; border-top: 2px dashed var(--line); }
+  .memo h2 { font-size: 30px; color: var(--green); font-weight: 700; margin-bottom: 14px; }
+  .memo li { list-style: none; font-size: 25px; line-height: 1.7; color: var(--ink); padding-left: 30px; position: relative; }
+  .memo li::before { content: ""; position: absolute; left: 0; top: 16px; width: 14px; height: 14px; background: var(--terra); }
+
+  .sign { position: absolute; right: 88px; bottom: 62px; font-size: 24px; color: var(--muted); letter-spacing: .06em; }
+  .deco { position: absolute; right: 80px; top: 58px; width: 150px; height: 150px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="stripe top"></div>
+
+  <svg class="deco" viewBox="0 0 200 200" aria-hidden="true">
+    <rect x="38" y="62" width="124" height="104" rx="16" fill="#e9a35b" stroke="#3b3a36" stroke-width="5"/>
+    <path d="M78 62 V44 q0-10 10-10 h24 q10 0 10 10 V62" fill="none" stroke="#3b3a36" stroke-width="5"/>
+    <line x1="38" y1="98" x2="162" y2="98" stroke="#3b3a36" stroke-width="5"/>
+    <rect x="88" y="90" width="24" height="18" rx="4" fill="#fbf8f1" stroke="#3b3a36" stroke-width="5"/>
+    <circle cx="62" cy="172" r="8" fill="#3b3a36"/><circle cx="138" cy="172" r="8" fill="#3b3a36"/>
+    <rect x="52" y="118" width="40" height="28" rx="6" fill="#8fb391" stroke="#3b3a36" stroke-width="4" transform="rotate(-8 72 132)"/>
+    <path d="M150 20 l6 14 M168 32 l-12 8 M136 24 l4 12" stroke="#d9643e" stroke-width="5" stroke-linecap="round"/>
+  </svg>
+
+  <div><span class="kicker">関西旅のお得メモ</span><span class="kicker-note">楽天トラベル</span></div>
+
+  <h1>関西の宿、泊まるだけで<br>ポイントが戻ってくる</h1>
+
+  <div class="hero">
+    <div class="max">最大</div>
+    <div class="num">40<small>%</small></div>
+    <div class="unit">ポイント<br>還元</div>
+  </div>
+  <svg class="underline" viewBox="0 0 520 22" aria-hidden="true"><path d="M6 14 C120 4, 260 22, 514 8" fill="none" stroke="#d9643e" stroke-width="6" stroke-linecap="round"/></svg>
+
+  <div class="rows">
+    <div class="row">
+      <div class="label">どんなもの？</div>
+      <div class="val">「またきてな関西旅」の対象プランに<br>泊まると、宿泊料金の<b>10〜40%</b>が<br>ポイントで戻る</div>
+    </div>
+    <div class="row">
+      <div class="label">エントリー</div>
+      <div class="val"><b>不要</b>。対象プランを予約するだけ</div>
+    </div>
+    <div class="row">
+      <div class="label">対象エリア</div>
+      <div class="chips">
+        <span class="chip">大阪</span><span class="chip">京都</span><span class="chip">兵庫</span><span class="chip">奈良</span><span class="chip">滋賀</span><span class="chip">和歌山</span><span class="chip">鳥取</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="memo">
+    <h2>知っておきたいこと</h2>
+    <ul>
+      <li>還元率はプランごとに違うので、予約前にチェック</li>
+      <li>ポイントはチェックアウト翌日から10日以内に還元</li>
+      <li>2026年11月8日時点の情報。期間や最新の条件は<br>公式ページで確認してね</li>
+    </ul>
+  </div>
+
+  <div class="sign">hina｜大人のごほうび旅</div>
+  <div class="stripe bottom"></div>
+</div>
+</body>
+</html>
